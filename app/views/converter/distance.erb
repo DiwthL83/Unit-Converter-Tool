@@ -1,0 +1,40 @@
+<h1>Distance Conversion</h1>
+<h2>(numbers only...use a decimal if needed)</h2>
+
+
+<div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<form method="post" action="/distance">
+		Distance to Convert:
+		&nbsp;&nbsp;
+		<label><input type="number" name="dist_input" value=""></label>
+		&nbsp;&nbsp;
+		Conversion Type: 
+		&nbsp;&nbsp;
+		<select name="dist_choices">
+			<option value="k_to_m" name=""> Kilometers to Miles </option>
+			<option value="m_to_k" name=""> Miles to Kilometers </option>
+		</select>
+	<br>
+	<br>
+	<br>
+	<br>
+		<input name="" type="submit" value="CONVERT"/>
+	</form>
+</div>
+
+
+
+<div>
+	<div>
+<% if @dist_conv == "k_to_m"%>
+		<%= @dist_input%> Kilometers &nbsp;&nbsp;=&nbsp;&nbsp; <%= @dist_result%> Miles
+	<% elsif @dist_conv == "m_to_k"%>
+		<%= @dist_input%> Miles &nbsp;&nbsp;=&nbsp;&nbsp; <%= @dist_result%> Kilometers
+<% end %>
+	</div>
+
+</div>

@@ -1,0 +1,52 @@
+<h1>Weight Conversion</h1>
+<h2>(numbers only...use a decimal if needed)</h2>
+
+
+<div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<form method="post" action="/weight">
+		Weight to Convert:
+		&nbsp;&nbsp;
+		<label><input type="number" name="weight_input" value=""></label>
+		&nbsp;&nbsp;
+		Conversion Type: 
+		&nbsp;&nbsp;
+		<select name="weight_choices">
+			<option value="st_to_lb" name=""> Stones to Pounds </option>
+			<option value="st_to_kg" name=""> Stones to Kilograms </option>
+			<option value="lb_to_st" name=""> Pounds to Stones </option>
+			<option value="lb_to_kg" name=""> Pounds to Kilograms </option>
+			<option value="kg_to_st" name=""> Kilograms to Stones </option>
+			<option value="kg_to_lb" name=""> Kilograms to Pounds </option>
+		</select>
+	<br>
+	<br>
+	<br>
+	<br>
+		<input name="" type="submit" value="CONVERT"/>
+	</form>
+</div>
+
+
+
+<div>
+	<div>
+<% if @weight_conv == "st_to_lb"%>
+		<%= @weight_input%> Stones &nbsp;&nbsp;=&nbsp;&nbsp; <%= @weight_result%> Pounds
+	<% elsif @weight_conv == "st_to_kg"%>
+		<%= @weight_input%> Stones &nbsp;&nbsp;=&nbsp;&nbsp; <%= @weight_result%> Kilograms
+	<% elsif @weight_conv == "lb_to_st"%>
+		<%= @weight_input%> Pounds &nbsp;&nbsp;=&nbsp;&nbsp; <%= @weight_result%> Stones
+	<% elsif @weight_conv == "lb_to_kg"%>
+		<%= @weight_input%> Pounds &nbsp;&nbsp;=&nbsp;&nbsp; <%= @weight_result%> Kilograms
+	<% elsif @weight_conv == "kg_to_st"%>
+		<%= @weight_input%> Kilograms &nbsp;&nbsp;=&nbsp;&nbsp; <%= @weight_result%> Stones
+	<% elsif @weight_conv == "kg_to_lb"%>
+		<%= @weight_input%> Kilograms &nbsp;&nbsp;=&nbsp;&nbsp; <%= @weight_result%> Pounds
+<% end %>
+	</div>
+
+</div>
